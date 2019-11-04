@@ -19,29 +19,34 @@ class UserInput extends Component {
     this.props.dispatch({type: 'ADD_USER', user: this.state})
   }
 
+
   render() {
     return(
-      <form onSubmit={this.handleOnSubmit}>
-        <p>
-          <input
-            type="text"
-            id="username"
-            onChange={this.handleInputChange}
-            placeholder="username"
-          />
-        </p>
-        <p>
-          <input
-            type="text"
-            id="hometown"
-            onChange={this.handleInputChange}
-            placeholder="hometown"
-          />
-        </p>
-        <input type="submit" />
-      </form>
+      <React.Fragment>
+        <form onSubmit={this.handleOnSubmit}>
+          <p>
+            <input
+              type="text"
+              id="username"
+              onChange={this.handleInputChange}
+              placeholder="username"
+            />
+          </p>
+          <p>
+            <input
+              type="text"
+              id="hometown"
+              onChange={this.handleInputChange}
+              placeholder="hometown"
+            />
+          </p>
+          <input type="submit" />
+        </form>
+
+      </React.Fragment>
     )
   }
 }
+
 
 export default connect()(UserInput);
